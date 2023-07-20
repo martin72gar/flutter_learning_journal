@@ -26,17 +26,39 @@ class FirstPage extends StatelessWidget {
         height: double.maxFinite,
         child: Column(
           children: [
-            Container(
-              margin: const EdgeInsets.all(20),
-              width: double.maxFinite,
-              height: 100,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Color(0xFF89dad0)),
-              child: Center(
-                child: Text(
-                  controller.x.toString(),
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+            GetBuilder<TapController>(builder: (_) {
+              return Container(
+                margin: const EdgeInsets.all(20),
+                width: double.maxFinite,
+                height: 100,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Color(0xFF89dad0)),
+                child: Center(
+                  child: Text(
+                    controller.x.toString(),
+                    style: TextStyle(fontSize: 20, color: Colors.white),
+                  ),
+                ),
+              );
+            }),
+            GestureDetector(
+              onTap: () {
+                controller.decreaseX();
+                debugPrint("${controller.x}");
+              },
+              child: Container(
+                margin: const EdgeInsets.all(20),
+                width: double.maxFinite,
+                height: 100,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Color(0xFF89dad0)),
+                child: Center(
+                  child: Text(
+                    "Decrease Int",
+                    style: TextStyle(fontSize: 20, color: Colors.white),
+                  ),
                 ),
               ),
             ),
