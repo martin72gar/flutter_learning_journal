@@ -35,17 +35,52 @@ class ThirdPage extends StatelessWidget {
                   width: double.maxFinite,
                   height: 100,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Color(0xFF89dad0)),
+                      borderRadius: BorderRadius.circular(8),
+                      color: Color.fromARGB(255, 57, 109, 103)),
                   child: Center(
                     child: Text(
-                      Get.find<TapController>().x.toString(),
+                      "X value : " + Get.find<TapController>().x.toString(),
                       style: TextStyle(fontSize: 20, color: Colors.white),
                     ),
                   ),
                 ),
               );
             }),
+            Obx(
+              () => Container(
+                margin: const EdgeInsets.all(20),
+                width: double.maxFinite,
+                height: 100,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Color(0xFF89dad0)),
+                child: Center(
+                  child: Text(
+                    "Y value : " + Get.find<TapController>().y.value.toString(),
+                    style: TextStyle(fontSize: 20, color: Colors.white),
+                  ),
+                ),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                Get.find<TapController>().increaseY();
+              },
+              child: Container(
+                margin: const EdgeInsets.all(20),
+                width: double.maxFinite,
+                height: 100,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Color(0xFF89dad0)),
+                child: Center(
+                  child: Text(
+                    "Increase Y",
+                    style: TextStyle(fontSize: 20, color: Colors.white),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
