@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/learn_getx/helper/init_dependency.dart';
 import 'package:flutter_application_1/learn_getx/my_home_page.dart';
 import 'package:get/get.dart';
-import 'learn_getx/helper/init_controllers.dart' as di;
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await di.init();
   runApp(const MyApp());
 }
 
@@ -16,6 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      initialBinding: InitDep(),
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
