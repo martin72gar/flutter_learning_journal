@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/learn_getx/controllers/tap_controller.dart';
 import 'package:get/get.dart';
 
 class FirstPage extends StatelessWidget {
@@ -6,6 +7,8 @@ class FirstPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TapController controller = Get.find();
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -32,7 +35,7 @@ class FirstPage extends StatelessWidget {
                   color: Color(0xFF89dad0)),
               child: Center(
                 child: Text(
-                  "tap",
+                  controller.x.toString(),
                   style: TextStyle(fontSize: 20, color: Colors.white),
                 ),
               ),
