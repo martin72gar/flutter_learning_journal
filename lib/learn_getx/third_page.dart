@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/learn_getx/controllers/list_controller.dart';
 import 'package:flutter_application_1/learn_getx/controllers/tap_controller.dart';
 import 'package:flutter_application_1/learn_getx/my_home_page.dart';
 import 'package:get/get.dart';
@@ -20,9 +21,7 @@ class ThirdPage extends StatelessWidget {
           ),
         ),
       ),
-      body: Container(
-        width: double.maxFinite,
-        height: double.maxFinite,
+      body: SingleChildScrollView(
         child: Column(
           children: [
             GetBuilder<TapController>(builder: (_) {
@@ -114,6 +113,27 @@ class ThirdPage extends StatelessWidget {
                 child: Center(
                   child: Text(
                     "SUM",
+                    style: TextStyle(fontSize: 20, color: Colors.white),
+                  ),
+                ),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                Get.find<ListController>()
+                    .setValues(Get.find<TapController>().z);
+                debugPrint(Get.find<TapController>().z.toString());
+              },
+              child: Container(
+                margin: const EdgeInsets.all(20),
+                width: double.maxFinite,
+                height: 100,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Color(0xFF89dad0)),
+                child: Center(
+                  child: Text(
+                    "SAVE",
                     style: TextStyle(fontSize: 20, color: Colors.white),
                   ),
                 ),
