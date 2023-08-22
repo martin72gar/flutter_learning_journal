@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/learn_getx/helper/init_dependency.dart';
 import 'package:flutter_application_1/learn_getx/my_home_page.dart';
+import 'package:flutter_application_1/learn_infinite_scrolling/infinite_scroll_listview.dart';
 import 'package:get/get.dart';
 
 Future<void> main() async {
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(),
+      home: const InfiniteScroll(),
     );
   }
 }
